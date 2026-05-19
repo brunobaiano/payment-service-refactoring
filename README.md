@@ -1,6 +1,6 @@
 # Payment Service Refactoring: Reflection to Modern Java
 
-> 📝 **Current Status**: This repository currently contains **Phase 1 (Legacy Reflection-Based Engine)** and corresponds to the first article in the series. **Phase 3 (Modern Java)** will be added in a future release.
+> 📝 **Current Status**: This repository currently contains **Phase 1 (Legacy Reflection-Based Engine)** and **Phase 2 (Strategy Pattern)**. Phase 1 corresponds to the first article and Phase 2 to the second article in the series. **Phase 3 (Modern Java)** will be added in a future release.
 
 This repository exists to demonstrate a real-world scenario of migrating a legacy, Reflection-based validation engine to Modern Java Features (Functional Interfaces, Records, and Pattern Matching). 
 
@@ -203,26 +203,24 @@ This is a standard multi-module Maven project.
 
 For the main exercise, **your goal is to refactor the legacy codebase into a modern Java application**.
 - **Starting Point**: You will begin your work in `phase1-legacy-reflection`.
-- **The Goal**: Refactor the reflection-based engine to use Modern Java features like Records, Method References, and Pattern Matching.
-- **The Answer Key**: If you get stuck or want to see the final solution, refer to `phase3-modern-java`! 
-*(Note: `phase2-strategy-pattern` is included as bonus material if you want to see how this would have been solved using classic Gang of Four Object-Oriented design before Modern Java features existed).*
+- **Step 2 (Bonus)**: Check out `phase2-strategy-pattern` to see how the Gang of Four **Strategy Pattern** eliminates `Method.invoke()` using pure Object-Oriented design — a great intermediate step before jumping to Modern Java.
+- **The Goal**: Refactor the engine to use Modern Java features like Records, Method References, and Pattern Matching.
+- **The Answer Key**: `phase3-modern-java` will be available in a future release as the final solution!
 
 ### Build & Test Commands
 
 ```bash
-# Compile Phase 3
-mvn -pl phase3-modern-java clean compile
+# Compile and test Phase 1 (Legacy Reflection)
+mvn -pl phase1-legacy-reflection clean test
 
-# Run all Phase 3 tests
-mvn -pl phase3-modern-java test
+# Compile and test Phase 2 (Strategy Pattern)
+mvn -pl phase2-strategy-pattern clean test
 
-# Run specific test suite
-mvn -pl phase3-modern-java test -Dtest=RecordPatternMatchingTest
-mvn -pl phase3-modern-java test -Dtest=PaymentRouterTest
-mvn -pl phase3-modern-java test -Dtest=ModernEngineTest
+# Run a specific Phase 2 test
+mvn -pl phase2-strategy-pattern test -Dtest=StrategyEngineTest#testValidCreditCardPaymentScenario
 
-# Full build and package
-mvn -pl phase3-modern-java clean package
+# Build all modules at once
+mvn clean install
 ```
 
 ## Challenges

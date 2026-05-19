@@ -1,0 +1,17 @@
+[
+  {
+    "paymentType": "CREDIT_CARD",
+    "requiredValidations": [
+      "validateCardFormat",
+      "checkFraudRisk",
+      "validateLimits"
+    ]
+  },
+  {
+    "paymentType": "PIX",
+    "requiredValidations": [
+      "validatePixKey",
+      "checkFraudRisk"
+    ]
+  }
+]

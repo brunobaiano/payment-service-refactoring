@@ -11,7 +11,8 @@
 
     <modules>
         <module>phase1-legacy-reflection</module>
-        <!-- phase2-strategy-pattern and phase3-modern-java coming soon -->
+        <module>phase2-strategy-pattern</module>
+        <!-- phase3-modern-java coming soon -->
     </modules>
 
     <properties>
